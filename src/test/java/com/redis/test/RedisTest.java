@@ -18,7 +18,6 @@ public class RedisTest {
 //        test.set("hw","hello world");
         String name = test.get("name");
         System.out.println(name);
-
     }
 
 }

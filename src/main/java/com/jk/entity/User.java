@@ -1,4 +1,4 @@
-package com.jk.po;
+package com.jk.entity;
 
 public class User {
 
