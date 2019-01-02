@@ -15,11 +15,11 @@
     </resultMap>
 
     <insert id="insertUser" parameterType="com.jk.entity.User" >
-        INSERT INTO user (usercode,password,) VALUES (#{userkey});
+        INSERT INTO user (usercode,password,salt,username) VALUES (#{usercode} , #{password} , #{salt} ,#{username});
     </insert>
 
-    <select id="validate" parameterType="com.jk.entity.User" resultType="java.lang.Integer">
-        SELECT COUNT(userkey) from user where userkey=#{userkey};
+    <select id="findUserByUsercode" resultType="com.jk.entity.User">
+        SELECT (usercode,password,salt,username) from user where usercode=#{usercode};
     </select>
 
     <!--<select id="queryUserLogAll" parameterType="UserBehaviour" resultType="java.lang.Integer">-->
