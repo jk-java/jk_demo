@@ -8,7 +8,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import redis.clients.jedis.Jedis;
 
 @WebAppConfiguration("src/main/resources")
-@ContextConfiguration(locations = "classpath:spring/spring-*.xml")
+@ContextConfiguration(locations = "classpath*:spring/spring-*.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RedisTest {
 

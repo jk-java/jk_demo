@@ -2,23 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.credit.mapper.UserMapper">
 
-    <resultMap id="userMap" type="com.jk.po.User">
+    <resultMap id="userMap" type="com.jk.entity.User">
         <id property="id" column="id" />
         <result property="userkey" column="userkey"/>
     </resultMap>
 
-    <resultMap id="BaseResultMap" type="com.jk.po.User">
+    <resultMap id="BaseResultMap" type="com.jk.entity.User">
         <constructor>
             <idArg column="id" javaType="java.lang.Long" jdbcType="BIGINT" />
             <arg column="userkey" javaType="java.lang.String" jdbcType="VARCHAR" />
         </constructor>
     </resultMap>
 
-    <insert id="insertUser" parameterType="com.jk.po.User" >
-        INSERT INTO user (userkey) VALUES (#{userkey});
+    <insert id="insertUser" parameterType="com.jk.entity.User" >
+        INSERT INTO user (usercode,password,) VALUES (#{userkey});
     </insert>
 
-    <select id="validate" parameterType="com.jk.po.User" resultType="java.lang.Integer">
+    <select id="validate" parameterType="com.jk.entity.User" resultType="java.lang.Integer">
         SELECT COUNT(userkey) from user where userkey=#{userkey};
     </select>
 

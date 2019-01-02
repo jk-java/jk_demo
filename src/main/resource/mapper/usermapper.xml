@@ -15,7 +15,7 @@
     </resultMap>
 
     <insert id="insertUser" parameterType="com.jk.entity.User" >
-        INSERT INTO user (userkey) VALUES (#{userkey});
+        INSERT INTO user (usercode,password,) VALUES (#{userkey});
     </insert>
 
     <select id="validate" parameterType="com.jk.entity.User" resultType="java.lang.Integer">

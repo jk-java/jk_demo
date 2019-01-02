@@ -12,8 +12,8 @@
                         http://www.springframework.org/schema/tx
                         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-
-    <context:property-placeholder location="classpath:druid/druid.properties"/>
+    <context:property-placeholder location="classpath:druid/jdbc.properties" ignore-unresolvable="true"/>
+    <context:property-placeholder location="classpath:druid/druid.properties" ignore-unresolvable="true"/>
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
         <property name="driverClassName" value="${jdbc.driverClassName}" />
@@ -52,23 +52,23 @@
         <!-- 验证连接有效与否的SQL，不同的数据配置不同 -->
         <property name="validationQuery" value="select 1 " />
         <property name="filters" value="stat" />
-        <property name="proxyFilters">
-            <list>
-                <ref bean="logFilter" />
-            </list>
-        </property>
+        <!--<property name="proxyFilters">-->
+            <!--&lt;!&ndash;<list>&ndash;&gt;-->
+                <!--&lt;!&ndash;<ref bean="logFilter" />&ndash;&gt;-->
+            <!--&lt;!&ndash;</list>&ndash;&gt;-->
+        <!--</property>-->
     </bean>
 
 
 
 
-    <!-- 配置数据源 -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/manager?useUnicode=true&amp;characterEncoding=utf-8"/>
-        <property name="username" value="root"/>
-        <property name="password" value="123jk"/>
-    </bean>
+    <!--&lt;!&ndash; 配置数据源 &ndash;&gt;-->
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/manager?useUnicode=true&amp;characterEncoding=utf-8"/>-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="123jk"/>-->
+    <!--</bean>-->
 
 
     <!-- mybatis和spring完美整合，不需要mybatis的配置映射文件 -->
