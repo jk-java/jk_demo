@@ -18,13 +18,15 @@
         <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
     </bean>
 
-    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
           p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.password}"
           p:pool-config-ref="poolConfig" />
 
-     <!--redis template definition-->
-    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
-        <property name="connectionFactory" ref="connectionFactory" />
-    </bean>
+     <!--&lt;!&ndash;redis template definition&ndash;&gt;-->
+    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">-->
+        <!--<property name="connectionFactory" ref="jedisConnectionFactory" />-->
+    <!--</bean>-->
+
+
 
 </beans>
