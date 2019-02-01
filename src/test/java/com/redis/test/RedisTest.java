@@ -52,12 +52,12 @@ public class RedisTest {
         List<User> users1 = baseService.findAllUser();
         long end1 = System.currentTimeMillis();
         long resulttime1 = end1 - start1;
-        System.out.println("第一次查询共用了" + resulttime1 + "毫秒");
+        System.out.println("第一次查询共用了" + resulttime1 + "毫秒");// 数据库
         long start2 = System.currentTimeMillis();
         List<User> users2 = baseService.findAllUser();
         long end2 = System.currentTimeMillis();
         long resulttime2 = end2 - start2;
-        System.out.println("第一次查询共用了" + resulttime2 + "毫秒");
+        System.out.println("第一次查询共用了" + resulttime2 + "毫秒");// 缓存
     }
 
     @Test
