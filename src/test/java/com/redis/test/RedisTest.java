@@ -26,9 +26,9 @@ public class RedisTest {
 
     @Test
     public void redisConnectionTest() {
-//        Jedis test = new Jedis("127.0.0.1",6379);
-////        test.set("hw","hello world");
-//        String name = test.get("name");
+//        Jedis Test = new Jedis("127.0.0.1",6379);
+////        Test.set("hw","hello world");
+//        String name = Test.get("name");
 //        System.out.println(name);
 //        redisCache.clear();
 

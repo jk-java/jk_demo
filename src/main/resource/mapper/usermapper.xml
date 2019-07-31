@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.UserMapper">
-    <cache type="com.jk.redis.cache.RedisCache"/>
+    <!--<cache type="com.jk.redis.cache.RedisCache"/>-->
     <resultMap id="userMap" type="com.jk.entity.User">
         <id property="id" column="id" />
         <result property="usercode" column="usercode"/>
